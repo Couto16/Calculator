@@ -21,15 +21,21 @@ const buttonCalculator_equality = document.querySelector('.equality');
 const buttonCalculator_reset = document.querySelector('.reset');
 
 let number = '';
+let operation = [];
+let result = 0;
+let firstTime = true;
+let sum = false;
+let subtracion = false;
+let multiplication = false;
 
-buttonCalculator_1.addEventListener('click', () => { 
+buttonCalculator_1.addEventListener('click', () => {
     number += '1'
 })
 buttonCalculator_2.addEventListener('click', () => {
     number += '2'
 })
 buttonCalculator_3.addEventListener('click', () => {
-    number += '3'    
+    number += '3'
 })
 buttonCalculator_4.addEventListener('click', () => {
     number += '4'
@@ -56,27 +62,70 @@ buttonCalculator_ponto.addEventListener('click', () => {
     number += '.'
 })
 buttonCalculator_sum.addEventListener('click', () => {
-   
+    if (number != '') {
+        operation.push(convertToNumber(number))
+        number = ''
+    }
+    sum = true
 })
 buttonCalculator_subtracion.addEventListener('click', () => {
-    
+    if (number != '') {
+        operation.push(convertToNumber(number))
+        number = ''
+    }
+    subtracion = true
 })
 buttonCalculator_multiplication.addEventListener('click', () => {
-
+    if (number != '') {
+        operation.push(convertToNumber(number))
+        number = ''
+    }
+    multiplication = true
 })
 buttonCalculator_division.addEventListener('click', () => {
-    
+
 })
 buttonCalculator_percentage.addEventListener('click', () => {
-    
+
 })
 buttonCalculator_reset.addEventListener('click', () => {
-    
+
 })
 buttonCalculator_equality.addEventListener('click', () => {
-    console.log(convertToNumber(number))
-}) 
+    if (number != '') {
+        operation.push(convertToNumber(number))
+        number = ''
+    }
+    console.log("Array operation: " + operation)
+    if (sum) {
+        for (let value of operation) {
+            result += value
+        }
+        sum = false;
+        firstTime = false
+    } else if (subtracion) {
+        for (let value of operation) {
+            if (firstTime) {
+                result = operation[0] * 2
+                firstTime = false
+            }
+            result -= value
+        }
+        subtracion = false;
+    } else if (multiplication) {
+        for (let value of operation) {
+            if (firstTime) {
+                result = 1
+                firstTime = false
+            }
+            result *= value
+        }
+        multiplication = false
+    }
+    operation = []
+    console.log("resultado: " + result)
+})
 
-function convertToNumber(number){
+function convertToNumber(number) {
     return parseFloat(number)
 }
