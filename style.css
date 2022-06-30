@@ -1,0 +1,58 @@
+
+.container {
+    height: 100vh;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+header {
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    font-size: 40px;
+    background-color: rgb(42, 42, 42);
+    flex: 1;
+    
+}
+
+main {
+    background-color: rgb(197, 197, 197);
+    flex: 2;
+}
+
+footer {
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    background-color: rgb(149, 149, 149);
+    flex: 1;
+    
+}
+
+button {
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#inputValue {
+    text-align: right;
+}
+
+button:hover {
+    color: red;
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .point{
+    background-color: lightgray;
+}
+
+.sum, .subtracion, .multiplication, .division, .parentheseLeft, .parentheseRight, .percentage{
+    background-color: lightskyblue;
+} 
+
+.equality, .reset{
+    background-color: lightblue;
+}
