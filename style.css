@@ -1,4 +1,3 @@
-
 .container {
     height: 100vh;
     width: 100%;
@@ -6,7 +5,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+}
+
+.calculatorBorder {
+    border-radius: 10px;
+    background-color: rgb(42, 42, 42);
+    height: 75%;
+    padding: 10px;
+    border: 2px solid black;
 }
 
 header {
@@ -15,12 +21,13 @@ header {
     font-size: 40px;
     background-color: rgb(42, 42, 42);
     flex: 1;
-    
+
 }
 
 main {
     background-color: rgb(197, 197, 197);
     flex: 2;
+    align-items: center;
 }
 
 footer {
@@ -28,16 +35,20 @@ footer {
     color: whitesmoke;
     background-color: rgb(149, 149, 149);
     flex: 1;
-    
+
 }
 
 button {
+    height: 40px;
+    width: 40px;
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
 }
 
 #inputValue {
+    align-self: center;
+    height: 40px;
     text-align: right;
 }
 
@@ -45,14 +56,31 @@ button:hover {
     color: red;
 }
 
-.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .point{
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven,
+.eight,
+.nine,
+.zero,
+.point {
     background-color: lightgray;
 }
 
-.sum, .subtracion, .multiplication, .division, .parentheseLeft, .parentheseRight, .percentage{
+.sum,
+.subtracion,
+.multiplication,
+.division,
+.parentheseLeft,
+.parentheseRight,
+.percentage {
     background-color: lightskyblue;
-} 
+}
 
-.equality, .reset{
+.equality,
+.reset {
     background-color: lightblue;
 }
